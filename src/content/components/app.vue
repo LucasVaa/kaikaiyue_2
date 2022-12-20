@@ -1,15 +1,1422 @@
 <template>
-  <div></div>
+  <div
+    class="root _paper paper zh-cn circle-hidden"
+    style="display: block; --size:23px; --width:800px; --color:#1b1b1b; --link:#416ed2; --hover:#305ab7; --visited:#305ab7; --select:#1b1b1b; --selectbg:#bbd6fc; --bg-r:237; --bg-g:237; --bg-b:237; --canvas:#ffffff; --bg:rgb(237, 237, 237);"
+  >
+    <div class="container">
+      <article
+        class="syl-article-base tt-article-content syl-page-article syl-device-pc page"
+      ></article>
+    </div>
+    <div class="toolbar" style="top: 81px; left: 900px; max-height: 222px;">
+      <div class="items">
+        <span tabindex="-1" class="anticon anticon-close exit" @click="close"
+          ><svg
+            t="1671545450093"
+            class="icon"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2693"
+            viewBox="64 64 896 896"
+            focusable="false"
+            data-icon="setting"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+          >
+            <path
+              d="M548.992 503.744L885.44 167.328a31.968 31.968 0 1 0-45.248-45.248L503.744 458.496 167.328 122.08a31.968 31.968 0 1 0-45.248 45.248l336.416 336.416L122.08 840.16a31.968 31.968 0 1 0 45.248 45.248l336.416-336.416L840.16 885.44a31.968 31.968 0 1 0 45.248-45.248L548.992 503.744z"
+              p-id="2694"
+            ></path></svg></span
+        ><span tabindex="-1" class="anticon anticon-printer print"
+          ><svg
+            t="1671356910838"
+            class="icon"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="6427"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="64 64 896 896"
+            focusable="false"
+            data-icon="setting"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+          >
+            <path
+              d="M512 128l184 192H544v448h-64V320H328l184-192z m384 384h-64v320H192V512h-64v384h768V512z"
+              p-id="6428"
+            ></path></svg></span
+        ><span
+          tabindex="-1"
+          class="anticon anticon-setting setting"
+          @click="setting"
+          ><svg
+            t="1671356834980"
+            class="icon"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="5366"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="64 64 896 896"
+            focusable="false"
+            data-icon="setting"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+          >
+            <path
+              d="M512 697.6c102.4 0 182.4-83.2 182.4-185.6 0-102.4-83.2-185.6-182.4-185.6-102.4 0-182.4 83.2-182.4 185.6C329.6 614.4 412.8 697.6 512 697.6L512 697.6zM512 646.4c-73.6 0-134.4-60.8-134.4-134.4 0-73.6 60.8-134.4 134.4-134.4 73.6 0 134.4 60.8 134.4 134.4C646.4 585.6 585.6 646.4 512 646.4L512 646.4z"
+              p-id="5367"
+            ></path>
+            <path
+              d="M249.015232 843.178592c35.2 28.8 73.6 51.2 112 67.2 41.6-38.4 96-60.8 150.4-60.8 57.6 0 108.8 22.4 150.4 60.8 41.6-16 80-38.4 112-67.2-12.8-54.4-3.2-112 22.4-163.2 28.8-48 73.6-86.4 128-102.4 3.2-22.4 6.4-44.8 6.4-67.2 0-22.4-3.2-44.8-6.4-67.2-54.4-16-99.2-54.4-128-102.4-28.8-48-35.2-108.8-22.4-163.2-35.2-28.8-73.6-51.2-112-67.2-41.6 38.4-92.8 60.8-150.4 60.8-54.4 0-108.8-22.4-150.4-60.8-41.6 16-80 38.4-112 67.2 12.8 54.4 3.2 112-22.4 163.2-28.8 48-73.6 86.4-128 102.4-3.2 22.4-6.4 44.8-6.4 67.2 0 22.4 3.2 44.8 6.4 67.2 54.4 16 99.2 54.4 128 102.4C252.215232 731.178592 261.815232 788.778592 249.015232 843.178592M361.015232 958.378592c-54.4-19.2-105.6-48-150.4-89.6-6.4-6.4-9.6-16-6.4-22.4 16-48 9.6-99.2-16-140.8-25.6-44.8-64-73.6-112-83.2-9.6-3.2-16-9.6-16-19.2-6.4-28.8-9.6-60.8-9.6-89.6 0-28.8 3.2-57.6 9.6-89.6 3.2-9.6 9.6-16 16-19.2 48-12.8 89.6-41.6 112-83.2 25.6-44.8 28.8-92.8 16-140.8-3.2-9.6 0-19.2 6.4-22.4 44.8-38.4 96-67.2 150.4-89.6 9.6-3.2 16 0 22.4 6.4 35.2 35.2 80 57.6 128 57.6 48 0 96-19.2 128-57.6 6.4-6.4 16-9.6 22.4-6.4 54.4 19.2 105.6 48 150.4 89.6 6.4 6.4 9.6 16 6.4 22.4-16 48-9.6 99.2 16 140.8 25.6 44.8 64 73.6 112 83.2 9.6 3.2 16 9.6 16 19.2 6.4 28.8 9.6 60.8 9.6 89.6 0 28.8-3.2 57.6-9.6 89.6-3.2 9.6-9.6 16-16 19.2-48 12.8-89.6 41.6-112 83.2-25.6 44.8-28.8 92.8-16 140.8 3.2 9.6 0 19.2-6.4 22.4-44.8 38.4-96 67.2-150.4 89.6-9.6 3.2-16 0-22.4-6.4-35.2-35.2-80-57.6-128-57.6-48 0-96 19.2-128 57.6-3.2 3.2-9.6 6.4-16 6.4C364.215232 958.378592 361.015232 958.378592 361.015232 958.378592z"
+              p-id="5368"
+            ></path></svg
+        ></span>
+      </div>
+    </div>
+    <div
+      class="ant-drawer ant-drawer-right no-mask ant-drawer-open"
+      tabindex="-1"
+      style="z-index: 1002;"
+    >
+      <div
+        tabindex="0"
+        data-sentinel="start"
+        style="width: 0px;height: 0px;overflow: hidden;outline: none;position: absolute;"
+      ></div>
+      <div
+        class="ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
+        style="width: 450px;"
+      >
+        <div class="ant-drawer-content">
+          <div class="ant-drawer-wrapper-body">
+            <div class="ant-drawer-header">
+              <div class="ant-drawer-header-title">
+                <button
+                  type="button"
+                  class="ant-drawer-close"
+                  @click="closeSetting"
+                >
+                  <span class="anticon anticon-close"
+                    ><svg
+                      viewBox="64 64 896 896"
+                      focusable="false"
+                      data-icon="close"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      ></path></svg
+                  ></span>
+                </button>
+                <div class="ant-drawer-title">偏好设置</div>
+              </div>
+            </div>
+            <div class="ant-drawer-body">
+              <div style="height: 100%; width: 100%;">
+                <span
+                  class="ant-input-affix-wrapper search ant-input-affix-wrapper-sm"
+                  ><span class="ant-input-prefix"
+                    ><span class="anticon anticon-search"
+                      ><svg
+                        viewBox="64 64 896 896"
+                        focusable="false"
+                        data-icon="search"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+                        ></path></svg></span></span
+                  ><input
+                    class="ant-input ant-input-sm"
+                    placeholder="在偏好设置中搜索"
+                    type="text"
+                    value=""/><span class="ant-input-suffix"
+                    ><span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden"
+                      tabindex="-1"
+                      ><span class="anticon anticon-close-circle"
+                        ><svg
+                          viewBox="64 64 896 896"
+                          focusable="false"
+                          data-icon="close-circle"
+                          width="1em"
+                          height="1em"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+                          ></path></svg></span></span></span
+                ></span>
+                <div
+                  class="ant-tabs ant-tabs-right ant-tabs-middle ant-tabs-centered tabs"
+                >
+                  <div class="ant-tabs-nav">
+                    <div
+                      class="ant-tabs-nav-wrap ant-tabs-nav-wrap-ping-bottom"
+                    >
+                      <div
+                        class="ant-tabs-nav-list"
+                        style="transform: translate(0px, 0px);"
+                      >
+                        <div class="ant-tabs-tab ant-tabs-tab-active">
+                          <div
+                            aria-selected="true"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-style"
+                            aria-controls="rc-tabs-0-panel-style"
+                          >
+                            <span title="样式" class=""
+                              ><span class="anticon anticon-format-painter"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="format-painter"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M840 192h-56v-72c0-13.3-10.7-24-24-24H168c-13.3 0-24 10.7-24 24v272c0 13.3 10.7 24 24 24h592c13.3 0 24-10.7 24-24V256h32v200H465c-22.1 0-40 17.9-40 40v136h-44c-4.4 0-8 3.6-8 8v228c0 .6.1 1.3.2 1.9A83.99 83.99 0 00457 960c46.4 0 84-37.6 84-84 0-2.1-.1-4.1-.2-6.1.1-.6.2-1.2.2-1.9V640c0-4.4-3.6-8-8-8h-44V520h351c22.1 0 40-17.9 40-40V232c0-22.1-17.9-40-40-40zM720 352H208V160h512v192zM477 876c0 11-9 20-20 20s-20-9-20-20V696h40v180z"
+                                  ></path></svg></span
+                              >样式</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-skin"
+                            aria-controls="rc-tabs-0-panel-skin"
+                          >
+                            <span title="主题" class=""
+                              ><span class="anticon anticon-skin"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="skin"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M870 126H663.8c-17.4 0-32.9 11.9-37 29.3C614.3 208.1 567 246 512 246s-102.3-37.9-114.8-90.7a37.93 37.93 0 00-37-29.3H154a44 44 0 00-44 44v252a44 44 0 0044 44h75v388a44 44 0 0044 44h478a44 44 0 0044-44V466h75a44 44 0 0044-44V170a44 44 0 00-44-44zm-28 268H723v432H301V394H182V198h153.3c28.2 71.2 97.5 120 176.7 120s148.5-48.8 176.7-120H842v196z"
+                                  ></path></svg></span
+                              >主题</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-layout"
+                            aria-controls="rc-tabs-0-panel-layout"
+                          >
+                            <span title="布局" class=""
+                              ><span class="anticon anticon-layout"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="layout"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-696 72h136v656H184V184zm656 656H384V384h456v456zM384 320V184h456v136H384z"
+                                  ></path></svg></span
+                              >布局</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-toolbar"
+                            aria-controls="rc-tabs-0-panel-toolbar"
+                          >
+                            <span title="工具栏" class=""
+                              ><span class="anticon anticon-tool"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="tool"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M876.6 239.5c-.5-.9-1.2-1.8-2-2.5-5-5-13.1-5-18.1 0L684.2 409.3l-67.9-67.9L788.7 169c.8-.8 1.4-1.6 2-2.5 3.6-6.1 1.6-13.9-4.5-17.5-98.2-58-226.8-44.7-311.3 39.7-67 67-89.2 162-66.5 247.4l-293 293c-3 3-2.8 7.9.3 11l169.7 169.7c3.1 3.1 8.1 3.3 11 .3l292.9-292.9c85.5 22.8 180.5.7 247.6-66.4 84.4-84.5 97.7-213.1 39.7-311.3zM786 499.8c-58.1 58.1-145.3 69.3-214.6 33.6l-8.8 8.8-.1-.1-274 274.1-79.2-79.2 230.1-230.1s0 .1.1.1l52.8-52.8c-35.7-69.3-24.5-156.5 33.6-214.6a184.2 184.2 0 01144-53.5L537 318.9a32.05 32.05 0 000 45.3l124.5 124.5a32.05 32.05 0 0045.3 0l132.8-132.8c3.7 51.8-14.4 104.8-53.6 143.9z"
+                                  ></path></svg></span
+                              >工具栏</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-keys"
+                            aria-controls="rc-tabs-0-panel-keys"
+                          >
+                            <span title="快捷键" class=""
+                              ><span class="anticon anticon-thunderbolt"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="thunderbolt"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z"
+                                  ></path></svg></span
+                              >快捷键</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-menu"
+                            aria-controls="rc-tabs-0-panel-menu"
+                          >
+                            <span title="右键菜单" class=""
+                              ><span class="anticon anticon-menu"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="menu"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
+                                  ></path></svg></span
+                              >右键菜单</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-lists"
+                            aria-controls="rc-tabs-0-panel-lists"
+                          >
+                            <span title="黑白名单" class=""
+                              ><span class="anticon anticon-profile"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="profile"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM340 368a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0z"
+                                  ></path></svg></span
+                              >黑白名单</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-plugin"
+                            aria-controls="rc-tabs-0-panel-plugin"
+                          >
+                            <span title="应用市场" class=""
+                              ><span class="anticon anticon-appstore"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="appstore"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M464 144H160c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V160c0-8.8-7.2-16-16-16zm-52 268H212V212h200v200zm452-268H560c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V160c0-8.8-7.2-16-16-16zm-52 268H612V212h200v200zM464 544H160c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V560c0-8.8-7.2-16-16-16zm-52 268H212V612h200v200zm452-268H560c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V560c0-8.8-7.2-16-16-16zm-52 268H612V612h200v200z"
+                                  ></path></svg></span
+                              >应用市场</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-config"
+                            aria-controls="rc-tabs-0-panel-config"
+                          >
+                            <span title="配置" class=""
+                              ><span class="anticon anticon-database"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="database"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-600 72h560v208H232V136zm560 480H232V408h560v208zm0 272H232V680h560v208zM304 240a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0z"
+                                  ></path></svg></span
+                              >配置</span
+                            >
+                          </div>
+                        </div>
+                        <div class="ant-tabs-tab">
+                          <div
+                            aria-selected="false"
+                            class="ant-tabs-tab-btn"
+                            tabindex="0"
+                            id="rc-tabs-0-tab-about"
+                            aria-controls="rc-tabs-0-panel-about"
+                          >
+                            <span title="关于" class=""
+                              ><span class="anticon anticon-exclamation-circle"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  focusable="false"
+                                  data-icon="exclamation-circle"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                  ></path>
+                                  <path
+                                    d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+                                  ></path></svg></span
+                              >关于</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                          style="top: 0px; height: 38px;"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="ant-tabs-nav-operations">
+                      <button
+                        type="button"
+                        class="ant-tabs-nav-more"
+                        tabindex="-1"
+                        aria-haspopup="listbox"
+                        aria-controls="rc-tabs-0-more-popup"
+                        id="rc-tabs-0-more"
+                        aria-expanded="false"
+                        style=""
+                      >
+                        <span class="anticon anticon-ellipsis"
+                          ><svg
+                            viewBox="64 64 896 896"
+                            focusable="false"
+                            data-icon="ellipsis"
+                            width="1em"
+                            height="1em"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                            ></path></svg
+                        ></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="ant-tabs-content-holder">
+                    <div class="ant-tabs-content ant-tabs-content-right">
+                      <div
+                        tabindex="0"
+                        class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                        id="rc-tabs-0-panel-style"
+                        aria-labelledby="rc-tabs-0-tab-style"
+                      >
+                        <div class="ant-list-item night">
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="gap: 8px;"
+                          >
+                            <div class="ant-space-item" style="">
+                              <label>跟随系统</label>
+                            </div>
+                            <div class="ant-space-item">
+                              <button
+                                type="button"
+                                aria-checked="false"
+                                class="ant-switch ant-switch-small"
+                              >
+                                <div class="ant-switch-handle"></div>
+                                <span class="ant-switch-inner"></span>
+                              </button>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            aria-checked="false"
+                            disabled=""
+                            class="ant-switch ant-switch-small ant-switch-disabled"
+                          >
+                            <div class="ant-switch-handle"></div>
+                            <span class="ant-switch-inner"
+                              ><span class="anticon"
+                                ><svg
+                                  viewBox="0 0 1024 1024"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    d="M478.634667 811.349333a304.490667 304.490667 0 0 0 64.021333 0.277334v124.330666h-64v-124.608z m267.776-110.229333l87.594666 87.637333-45.226666 45.248-87.658667-87.594666c16.64-13.44 31.829333-28.629333 45.290667-45.290667z m-469.994667-1.493333c13.333333 16.746667 28.416 32 44.970667 45.568L232.533333 834.005333l-45.248-45.226666 89.130667-89.130667zM512 261.034667c138.602667 0 250.986667 112.384 250.986667 250.986666 0 138.602667-112.384 250.986667-250.986667 250.986667-138.602667 0-250.986667-112.384-250.986667-250.986667 0-138.602667 112.384-250.986667 250.986667-250.986666z m0 64a186.986667 186.986667 0 1 0 0 373.973333 186.986667 186.986667 0 0 0 0-373.973333z m423.957333 153.642666v64h-124.330666a304.725333 304.725333 0 0 0-0.277334-64h124.608z m-723.306666 0a304.490667 304.490667 0 0 0-0.277334 64H85.333333v-64h127.317334zM232.533333 187.264l90.346667 90.304c-16.64 13.44-31.829333 28.629333-45.290667 45.290667L187.306667 232.533333l45.226666-45.248z m556.224 0l45.248 45.226667-88.810666 88.874666a302.997333 302.997333 0 0 0-45.546667-44.970666l89.109333-89.130667zM542.656 85.333333v127.04a304.725333 304.725333 0 0 0-64 0.277334V85.333333h64z"
+                                  ></path></svg></span
+                            ></span>
+                          </button>
+                        </div>
+                        <div class="ant-list ant-list-split style">
+                          <div class="ant-spin-nested-loading">
+                            <div class="ant-spin-container">
+                              <ul class="ant-list-items">
+                                <li class="ant-list-item font">
+                                  <label
+                                    >默认字体<span
+                                      class="anticon anticon-question-circle"
+                                      style="margin-left: 3px;"
+                                      ><svg
+                                        viewBox="64 64 896 896"
+                                        focusable="false"
+                                        data-icon="question-circle"
+                                        width="1em"
+                                        height="1em"
+                                        fill="currentColor"
+                                      >
+                                        <path
+                                          d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                        ></path>
+                                        <path
+                                          d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z"
+                                        ></path></svg></span
+                                  ></label>
+                                  <div
+                                    class="ant-select ant-select-sm ant-select-single ant-select-show-arrow"
+                                    style="width: 160px;"
+                                  >
+                                    <div class="ant-select-selector">
+                                      <span class="ant-select-selection-search"
+                                        ><input
+                                          type="search"
+                                          autocomplete="off"
+                                          class="ant-select-selection-search-input"
+                                          aria-haspopup="listbox"
+                                          aria-owns="rc_select_0_list"
+                                          aria-autocomplete="list"
+                                          aria-controls="rc_select_0_list"
+                                          aria-activedescendant="rc_select_0_list_0"
+                                          readonly=""
+                                          unselectable="on"
+                                          value=""
+                                          style="opacity: 0;"
+                                          id="rc_select_0"/></span
+                                      ><span
+                                        class="ant-select-selection-item"
+                                        title="系统默认"
+                                        >系统默认</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="ant-select-arrow"
+                                      unselectable="on"
+                                      style="user-select: none;"
+                                      ><span
+                                        class="anticon anticon-down ant-select-suffix"
+                                        ><svg
+                                          viewBox="64 64 896 896"
+                                          focusable="false"
+                                          data-icon="down"
+                                          width="1em"
+                                          height="1em"
+                                          fill="currentColor"
+                                        >
+                                          <path
+                                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                          ></path></svg></span
+                                    ></span>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item cnfont font">
+                                  <label>中文字体</label>
+                                  <div
+                                    class="ant-select ant-select-sm ant-select-single ant-select-show-arrow"
+                                    style="width: 160px;"
+                                  >
+                                    <div class="ant-select-selector">
+                                      <span class="ant-select-selection-search"
+                                        ><input
+                                          type="search"
+                                          autocomplete="off"
+                                          class="ant-select-selection-search-input"
+                                          aria-haspopup="listbox"
+                                          aria-owns="rc_select_1_list"
+                                          aria-autocomplete="list"
+                                          aria-controls="rc_select_1_list"
+                                          aria-activedescendant="rc_select_1_list_0"
+                                          readonly=""
+                                          unselectable="on"
+                                          value=""
+                                          style="opacity: 0;"
+                                          id="rc_select_1"/></span
+                                      ><span
+                                        class="ant-select-selection-item"
+                                        title="系统默认"
+                                        >系统默认</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="ant-select-arrow"
+                                      unselectable="on"
+                                      style="user-select: none;"
+                                      ><span
+                                        class="anticon anticon-down ant-select-suffix"
+                                        ><svg
+                                          viewBox="64 64 896 896"
+                                          focusable="false"
+                                          data-icon="down"
+                                          width="1em"
+                                          height="1em"
+                                          fill="currentColor"
+                                        >
+                                          <path
+                                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                          ></path></svg></span
+                                    ></span>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item size slider">
+                                  <div class="slider-inner label">
+                                    <label>字体大小</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 10.5263%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="12"
+                                        aria-valuemax="50"
+                                        aria-valuenow="16"
+                                        aria-disabled="false"
+                                        style="left: 10.5263%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-down"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="50"
+                                            aria-valuenow="16"
+                                            step="1"
+                                            class="ant-input-number-input"
+                                            value="16"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="inputnumber-unit"
+                                        style="opacity: 1;"
+                                      >
+                                        px
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item width slider">
+                                  <div class="slider-inner label">
+                                    <label>页面宽度</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 20.5789%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="600"
+                                        aria-valuemax="2500"
+                                        aria-valuenow="991"
+                                        aria-disabled="false"
+                                        style="left: 20.5789%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-down"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="2500"
+                                            aria-valuenow="991"
+                                            step="1"
+                                            class="ant-input-number-input"
+                                            value="800"
+                                            @keyup.enter="pageWidth"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="inputnumber-unit"
+                                        style="opacity: 1;"
+                                      >
+                                        px
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item space slider">
+                                  <div class="slider-inner label">
+                                    <label>字体间距</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 0%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="0"
+                                        aria-valuemax="10"
+                                        aria-valuenow="0"
+                                        aria-disabled="false"
+                                        style="left: 0%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="true"
+                                            class="ant-input-number-handler ant-input-number-handler-down ant-input-number-handler-down-disabled"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="10"
+                                            aria-valuenow="0"
+                                            step="1"
+                                            class="ant-input-number-input"
+                                            value="0"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="inputnumber-unit"
+                                        style="opacity: 1;"
+                                      >
+                                        px
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item lineheight slider">
+                                  <div class="slider-inner label">
+                                    <label>字体行高</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 40%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="1"
+                                        aria-valuemax="3"
+                                        aria-valuenow="1.8"
+                                        aria-disabled="false"
+                                        style="left: 40%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-down"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="3"
+                                            aria-valuenow="1.8"
+                                            step="0.1"
+                                            class="ant-input-number-input"
+                                            value="1.8"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item weight slider">
+                                  <div class="slider-inner label">
+                                    <label>字体粗细</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 37.5%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="100"
+                                        aria-valuemax="900"
+                                        aria-valuenow="400"
+                                        aria-disabled="false"
+                                        style="left: 37.5%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-down"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="900"
+                                            aria-valuenow="400"
+                                            step="100"
+                                            class="ant-input-number-input"
+                                            value="400"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item blockspace slider">
+                                  <div class="slider-inner label">
+                                    <label>段落间距</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 64%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="0"
+                                        aria-valuemax="50"
+                                        aria-valuenow="32"
+                                        aria-disabled="false"
+                                        style="left: 64%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-down"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="50"
+                                            aria-valuenow="32"
+                                            step="2"
+                                            class="ant-input-number-input"
+                                            value="32"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="inputnumber-unit"
+                                        style="opacity: 1;"
+                                      >
+                                        px
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item indent slider">
+                                  <div class="slider-inner label">
+                                    <label>首行缩进</label>
+                                    <div
+                                      class="ant-slider ant-slider-horizontal"
+                                    >
+                                      <div class="ant-slider-rail"></div>
+                                      <div
+                                        class="ant-slider-track"
+                                        style="left: 0%; width: 0%;"
+                                      ></div>
+                                      <div class="ant-slider-step"></div>
+                                      <div
+                                        class="ant-slider-handle"
+                                        tabindex="0"
+                                        aria-valuemin="0"
+                                        aria-valuemax="10"
+                                        aria-valuenow="0"
+                                        aria-disabled="false"
+                                        style="left: 0%; transform: translateX(-50%);"
+                                      ></div>
+                                    </div>
+                                    <div class="inputnumber">
+                                      <div
+                                        class="ant-input-number ant-input-number-sm"
+                                      >
+                                        <div
+                                          class="ant-input-number-handler-wrap"
+                                        >
+                                          <span
+                                            unselectable="on"
+                                            aria-disabled="false"
+                                            class="ant-input-number-handler ant-input-number-handler-up"
+                                            ><span
+                                              class="anticon anticon-up ant-input-number-handler-up-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="up"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                                ></path></svg></span></span
+                                          ><span
+                                            unselectable="on"
+                                            aria-disabled="true"
+                                            class="ant-input-number-handler ant-input-number-handler-down ant-input-number-handler-down-disabled"
+                                            ><span
+                                              class="anticon anticon-down ant-input-number-handler-down-inner"
+                                              ><svg
+                                                viewBox="64 64 896 896"
+                                                focusable="false"
+                                                data-icon="down"
+                                                width="1em"
+                                                height="1em"
+                                                fill="currentColor"
+                                              >
+                                                <path
+                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                ></path></svg></span
+                                          ></span>
+                                        </div>
+                                        <div
+                                          class="ant-input-number-input-wrap"
+                                        >
+                                          <input
+                                            autocomplete="off"
+                                            aria-valuemin="0"
+                                            aria-valuemax="10"
+                                            aria-valuenow="0"
+                                            step="1"
+                                            class="ant-input-number-input"
+                                            value="0"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="inputnumber-unit"
+                                        style="opacity: 1;"
+                                      >
+                                        em
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item titlealign align">
+                                  <label>标题对齐</label>
+                                  <div
+                                    class="ant-select ant-select-sm ant-select-single ant-select-show-arrow"
+                                    style="width: 160px;"
+                                  >
+                                    <div class="ant-select-selector">
+                                      <span class="ant-select-selection-search"
+                                        ><input
+                                          type="search"
+                                          autocomplete="off"
+                                          class="ant-select-selection-search-input"
+                                          aria-haspopup="listbox"
+                                          aria-owns="rc_select_2_list"
+                                          aria-autocomplete="list"
+                                          aria-controls="rc_select_2_list"
+                                          aria-activedescendant="rc_select_2_list_0"
+                                          readonly=""
+                                          unselectable="on"
+                                          value=""
+                                          style="opacity: 0;"
+                                          id="rc_select_2"/></span
+                                      ><span
+                                        class="ant-select-selection-item"
+                                        title="系统默认"
+                                        >系统默认</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="ant-select-arrow"
+                                      unselectable="on"
+                                      style="user-select: none;"
+                                      ><span
+                                        class="anticon anticon-down ant-select-suffix"
+                                        ><svg
+                                          viewBox="64 64 896 896"
+                                          focusable="false"
+                                          data-icon="down"
+                                          width="1em"
+                                          height="1em"
+                                          fill="currentColor"
+                                        >
+                                          <path
+                                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                          ></path></svg></span
+                                    ></span>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item align">
+                                  <label>内容对齐</label>
+                                  <div
+                                    class="ant-select ant-select-sm ant-select-single ant-select-show-arrow"
+                                    style="width: 160px;"
+                                  >
+                                    <div class="ant-select-selector">
+                                      <span class="ant-select-selection-search"
+                                        ><input
+                                          type="search"
+                                          autocomplete="off"
+                                          class="ant-select-selection-search-input"
+                                          aria-haspopup="listbox"
+                                          aria-owns="rc_select_3_list"
+                                          aria-autocomplete="list"
+                                          aria-controls="rc_select_3_list"
+                                          aria-activedescendant="rc_select_3_list_0"
+                                          readonly=""
+                                          unselectable="on"
+                                          value=""
+                                          style="opacity: 0;"
+                                          id="rc_select_3"/></span
+                                      ><span
+                                        class="ant-select-selection-item"
+                                        title="系统默认"
+                                        >系统默认</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="ant-select-arrow"
+                                      unselectable="on"
+                                      style="user-select: none;"
+                                      ><span
+                                        class="anticon anticon-down ant-select-suffix"
+                                        ><svg
+                                          viewBox="64 64 896 896"
+                                          focusable="false"
+                                          data-icon="down"
+                                          width="1em"
+                                          height="1em"
+                                          fill="currentColor"
+                                        >
+                                          <path
+                                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                          ></path></svg></span
+                                    ></span>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item imagealign align">
+                                  <label>图片对齐</label>
+                                  <div
+                                    class="ant-select ant-select-sm ant-select-single ant-select-show-arrow"
+                                    style="width: 160px;"
+                                  >
+                                    <div class="ant-select-selector">
+                                      <span class="ant-select-selection-search"
+                                        ><input
+                                          type="search"
+                                          autocomplete="off"
+                                          class="ant-select-selection-search-input"
+                                          aria-haspopup="listbox"
+                                          aria-owns="rc_select_4_list"
+                                          aria-autocomplete="list"
+                                          aria-controls="rc_select_4_list"
+                                          aria-activedescendant="rc_select_4_list_0"
+                                          readonly=""
+                                          unselectable="on"
+                                          value=""
+                                          style="opacity: 0;"
+                                          id="rc_select_4"/></span
+                                      ><span
+                                        class="ant-select-selection-item"
+                                        title="系统默认"
+                                        >系统默认</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="ant-select-arrow"
+                                      unselectable="on"
+                                      style="user-select: none;"
+                                      ><span
+                                        class="anticon anticon-down ant-select-suffix"
+                                        ><svg
+                                          viewBox="64 64 896 896"
+                                          focusable="false"
+                                          data-icon="down"
+                                          width="1em"
+                                          height="1em"
+                                          fill="currentColor"
+                                        >
+                                          <path
+                                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                          ></path></svg></span
+                                    ></span>
+                                  </div>
+                                </li>
+                                <li class="ant-list-item imagehide switch">
+                                  <label>隐藏图片</label
+                                  ><button
+                                    type="button"
+                                    aria-checked="false"
+                                    class="ant-switch ant-switch-small"
+                                  >
+                                    <div class="ant-switch-handle"></div>
+                                    <span class="ant-switch-inner"></span>
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          class="ant-btn ant-btn-default ant-btn-block ant-btn-dangerous reset-btn"
+                        >
+                          <span>重 置</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+      ></div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { Readability } from "../js/Readability";
 import $ from "jquery";
 export default {
+  data() {
+    return {
+      readOn: false
+    };
+  },
   mounted() {
     const oringeDoc = document.URL;
 
-    let readOn = false;
     // 全局变量
     window.momoyu = {
       AVstatusArr: [], // 储存视频和音频element
@@ -31,130 +1438,23 @@ export default {
       // popup页面开启阅读模式
       if (request.method === "readMode") {
         if (request.value) {
-          readOn = true;
-          var article = new Readability(document).parse();
+          this.readOn = true;
 
-          var root = document.createElement("DIV");
-          var att = document.createAttribute("class");
-          att.value = "root";
-          root.setAttributeNode(att);
+          // 隐藏原网页
+          document.body.className = "circle-hidden";
 
-          var container = document.createElement("DIV");
-          var att = document.createAttribute("class");
-          att.value = "container";
-          container.setAttributeNode(att);
-
-          root.appendChild(container);
-          container.innerHTML = article.content;
-
-          // 工具栏部分
-
-          var toolbar = document.createElement("DIV");
-          var att = document.createAttribute("class");
-          att.value = "toolbar";
-          toolbar.setAttributeNode(att);
-          att = document.createAttribute("style");
-          att.value = "top: 81px; right: 322px; max-height: 199px;";
-          toolbar.setAttributeNode(att);
-
-          var items = document.createElement("DIV");
-          var att = document.createAttribute("class");
-          att.value = "items";
-          items.setAttributeNode(att);
-
-          toolbar.appendChild(items);
-
-          function returnItem(type) {
-            var spans = document.createElement("SPAN");
-            var att = document.createAttribute("role");
-            att.value = "img";
-            spans.setAttributeNode(att);
-            att = document.createAttribute("aria-label");
-            att.value = "close";
-            spans.setAttributeNode(att);
-            att = document.createAttribute("tabindex");
-            att.value = "-1";
-            spans.setAttributeNode(att);
-            att = document.createAttribute("class");
-            att.value = "anticon anticon-close exit";
-            spans.setAttributeNode(att);
-
-            var img = document.createElement("IMG");
-            var att = document.createAttribute("src");
-            att.value =
-              "https://lucas-first-bucket-1300338483.cos.ap-nanjing.myqcloud.com/kaikaiyue/" +
-              type +
-              "_0.svg";
-            img.setAttributeNode(att);
-            img.setAttribute("style", "width: 1em; height: 1em;");
-            img.setAttribute("class", "close");
-            spans.appendChild(img);
-
-            img.onmouseover = function() {
-              this.src =
-                "https://lucas-first-bucket-1300338483.cos.ap-nanjing.myqcloud.com/kaikaiyue/" +
-                type +
-                "_1.svg";
-            };
-
-            img.onmouseout = function() {
-              this.src =
-                "https://lucas-first-bucket-1300338483.cos.ap-nanjing.myqcloud.com/kaikaiyue/" +
-                type +
-                "_0.svg";
-            };
-            if (type == "close_1") {
-              spans.onclick = function() {
-                window.location.replace(oringeDoc);
-              };
-            } else if (type == "setting") {
-              spans.onclick = function() {
-                var drawer_open = document.getElementsByClassName(
-                  "ant-drawer-content-wrapper"
-                )[0];
-                drawer_open.setAttribute("class", "ant-drawer-content-wrapper");
-              };
-            }
-            return spans;
-          }
-
-          items.appendChild(returnItem("close_1"));
-          items.appendChild(returnItem("output"));
-          items.appendChild(returnItem("setting"));
-
-          container.appendChild(toolbar);
-
-          // 样式改变栏部分
-
-          var drawer = document.createElement("DIV");
-          drawer.innerHTML =
-            "<div class='ant-drawer ant-drawer-right no-mask ant-drawer-open' tabindex='-1' style='z-index: 1002;'><div tabindex='0' aria-hidden='true' data-sentinel='start' style='width: 0px;height: 0px;overflow: hidden;outline: none;position: absolute;'></div><div class='ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden' style='width: 450px;'><div class='ant-drawer-content' aria-modal='true' role='dialog'><div class='ant-drawer-wrapper-body'><div class='ant-drawer-header'><div class='ant-drawer-header-title'><button type='button' aria-label='Close' class='ant-drawer-close'><span role='img' aria-label='close' class='anticon anticon-close'><svg viewBox='64 64 896 896' focusable='false' data-icon='close' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z'></path></svg></span></button><div class='ant-drawer-title'>偏好设置</div></div></div><div class='ant-drawer-body'><div style='height: 100%; width: 100%;'><span class='ant-input-affix-wrapper search ant-input-affix-wrapper-sm'><span class='ant-input-prefix'><span role='img' aria-label='search' class='anticon anticon-search'><svg viewBox='64 64 896 896' focusable='false' data-icon='search' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z'></path></svg></span></span><input class='ant-input ant-input-sm' placeholder='在偏好设置中搜索' type='text' value=''><span class='ant-input-suffix'><span class='ant-input-clear-icon ant-input-clear-icon-hidden' role='button' tabindex='-1'><span role='img' aria-label='close-circle' class='anticon anticon-close-circle'><svg viewBox='64 64 896 896' focusable='false' data-icon='close-circle' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z'></path></svg></span></span></span></span><div class='ant-tabs ant-tabs-right ant-tabs-middle ant-tabs-centered tabs'><div role='tablist' class='ant-tabs-nav'><div class='ant-tabs-nav-wrap ant-tabs-nav-wrap-ping-bottom'><div class='ant-tabs-nav-list' style='transform: translate(0px, 0px);'><div class='ant-tabs-tab ant-tabs-tab-active'><div role='tab' aria-selected='true' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-style' aria-controls='rc-tabs-0-panel-style'><span title='样式' class=''><span role='img' aria-label='format-painter' class='anticon anticon-format-painter'><svg viewBox='64 64 896 896' focusable='false' data-icon='format-painter' width='1em' height='1em' fill='currentColor' aria-hidden='true'><defs><style></style></defs><path d='M840 192h-56v-72c0-13.3-10.7-24-24-24H168c-13.3 0-24 10.7-24 24v272c0 13.3 10.7 24 24 24h592c13.3 0 24-10.7 24-24V256h32v200H465c-22.1 0-40 17.9-40 40v136h-44c-4.4 0-8 3.6-8 8v228c0 .6.1 1.3.2 1.9A83.99 83.99 0 00457 960c46.4 0 84-37.6 84-84 0-2.1-.1-4.1-.2-6.1.1-.6.2-1.2.2-1.9V640c0-4.4-3.6-8-8-8h-44V520h351c22.1 0 40-17.9 40-40V232c0-22.1-17.9-40-40-40zM720 352H208V160h512v192zM477 876c0 11-9 20-20 20s-20-9-20-20V696h40v180z'></path></svg></span>样式</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-skin' aria-controls='rc-tabs-0-panel-skin'><span title='主题' class=''><span role='img' aria-label='skin' class='anticon anticon-skin'><svg viewBox='64 64 896 896' focusable='false' data-icon='skin' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M870 126H663.8c-17.4 0-32.9 11.9-37 29.3C614.3 208.1 567 246 512 246s-102.3-37.9-114.8-90.7a37.93 37.93 0 00-37-29.3H154a44 44 0 00-44 44v252a44 44 0 0044 44h75v388a44 44 0 0044 44h478a44 44 0 0044-44V466h75a44 44 0 0044-44V170a44 44 0 00-44-44zm-28 268H723v432H301V394H182V198h153.3c28.2 71.2 97.5 120 176.7 120s148.5-48.8 176.7-120H842v196z'></path></svg></span>主题</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-layout' aria-controls='rc-tabs-0-panel-layout'><span title='布局' class=''><span role='img' aria-label='layout' class='anticon anticon-layout'><svg viewBox='64 64 896 896' focusable='false' data-icon='layout' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-696 72h136v656H184V184zm656 656H384V384h456v456zM384 320V184h456v136H384z'></path></svg></span>布局</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-toolbar' aria-controls='rc-tabs-0-panel-toolbar'><span title='工具栏' class=''><span role='img' aria-label='tool' class='anticon anticon-tool'><svg viewBox='64 64 896 896' focusable='false' data-icon='tool' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M876.6 239.5c-.5-.9-1.2-1.8-2-2.5-5-5-13.1-5-18.1 0L684.2 409.3l-67.9-67.9L788.7 169c.8-.8 1.4-1.6 2-2.5 3.6-6.1 1.6-13.9-4.5-17.5-98.2-58-226.8-44.7-311.3 39.7-67 67-89.2 162-66.5 247.4l-293 293c-3 3-2.8 7.9.3 11l169.7 169.7c3.1 3.1 8.1 3.3 11 .3l292.9-292.9c85.5 22.8 180.5.7 247.6-66.4 84.4-84.5 97.7-213.1 39.7-311.3zM786 499.8c-58.1 58.1-145.3 69.3-214.6 33.6l-8.8 8.8-.1-.1-274 274.1-79.2-79.2 230.1-230.1s0 .1.1.1l52.8-52.8c-35.7-69.3-24.5-156.5 33.6-214.6a184.2 184.2 0 01144-53.5L537 318.9a32.05 32.05 0 000 45.3l124.5 124.5a32.05 32.05 0 0045.3 0l132.8-132.8c3.7 51.8-14.4 104.8-53.6 143.9z'></path></svg></span>工具栏</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-keys' aria-controls='rc-tabs-0-panel-keys'><span title='快捷键' class=''><span role='img' aria-label='thunderbolt' class='anticon anticon-thunderbolt'><svg viewBox='64 64 896 896' focusable='false' data-icon='thunderbolt' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z'></path></svg></span>快捷键</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-menu' aria-controls='rc-tabs-0-panel-menu'><span title='右键菜单' class=''><span role='img' aria-label='menu' class='anticon anticon-menu'><svg viewBox='64 64 896 896' focusable='false' data-icon='menu' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z'></path></svg></span>右键菜单</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-lists' aria-controls='rc-tabs-0-panel-lists'><span title='黑白名单' class=''><span role='img' aria-label='profile' class='anticon anticon-profile'><svg viewBox='64 64 896 896' focusable='false' data-icon='profile' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM340 368a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0z'></path></svg></span>黑白名单</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-plugin' aria-controls='rc-tabs-0-panel-plugin'><span title='应用市场' class=''><span role='img' aria-label='appstore' class='anticon anticon-appstore'><svg viewBox='64 64 896 896' focusable='false' data-icon='appstore' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M464 144H160c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V160c0-8.8-7.2-16-16-16zm-52 268H212V212h200v200zm452-268H560c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V160c0-8.8-7.2-16-16-16zm-52 268H612V212h200v200zM464 544H160c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V560c0-8.8-7.2-16-16-16zm-52 268H212V612h200v200zm452-268H560c-8.8 0-16 7.2-16 16v304c0 8.8 7.2 16 16 16h304c8.8 0 16-7.2 16-16V560c0-8.8-7.2-16-16-16zm-52 268H612V612h200v200z'></path></svg></span>应用市场</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-config' aria-controls='rc-tabs-0-panel-config'><span title='配置' class=''><span role='img' aria-label='database' class='anticon anticon-database'><svg viewBox='64 64 896 896' focusable='false' data-icon='database' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-600 72h560v208H232V136zm560 480H232V408h560v208zm0 272H232V680h560v208zM304 240a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0z'></path></svg></span>配置</span></div></div><div class='ant-tabs-tab'><div role='tab' aria-selected='false' class='ant-tabs-tab-btn' tabindex='0' id='rc-tabs-0-tab-about' aria-controls='rc-tabs-0-panel-about'><span title='关于' class=''><span role='img' aria-label='exclamation-circle' class='anticon anticon-exclamation-circle'><svg viewBox='64 64 896 896' focusable='false' data-icon='exclamation-circle' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z'></path><path d='M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z'></path></svg></span>关于</span></div></div><div class='ant-tabs-ink-bar ant-tabs-ink-bar-animated' style='top: 0px; height: 38px;'></div></div></div><div class='ant-tabs-nav-operations'><button type='button' class='ant-tabs-nav-more' tabindex='-1' aria-hidden='true' aria-haspopup='listbox' aria-controls='rc-tabs-0-more-popup' id='rc-tabs-0-more' aria-expanded='false' style=''><span role='img' aria-label='ellipsis' class='anticon anticon-ellipsis'><svg viewBox='64 64 896 896' focusable='false' data-icon='ellipsis' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z'></path></svg></span></button></div></div><div class='ant-tabs-content-holder'><div class='ant-tabs-content ant-tabs-content-right'><div role='tabpanel' tabindex='0' aria-hidden='false' class='ant-tabs-tabpane ant-tabs-tabpane-active' id='rc-tabs-0-panel-style' aria-labelledby='rc-tabs-0-tab-style'><div class='ant-list-item night'><div class='ant-space ant-space-horizontal ant-space-align-center' style='gap: 8px;'><div class='ant-space-item' style=''><label>跟随系统</label></div><div class='ant-space-item'><button type='button' role='switch' aria-checked='false' class='ant-switch ant-switch-small'><div class='ant-switch-handle'></div><span class='ant-switch-inner'></span></button></div></div><button type='button' role='switch' aria-checked='false' disabled='' class='ant-switch ant-switch-small ant-switch-disabled'><div class='ant-switch-handle'></div><span class='ant-switch-inner'><span role='img' class='anticon'><svg viewBox='0 0 1024 1024' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M478.634667 811.349333a304.490667 304.490667 0 0 0 64.021333 0.277334v124.330666h-64v-124.608z m267.776-110.229333l87.594666 87.637333-45.226666 45.248-87.658667-87.594666c16.64-13.44 31.829333-28.629333 45.290667-45.290667z m-469.994667-1.493333c13.333333 16.746667 28.416 32 44.970667 45.568L232.533333 834.005333l-45.248-45.226666 89.130667-89.130667zM512 261.034667c138.602667 0 250.986667 112.384 250.986667 250.986666 0 138.602667-112.384 250.986667-250.986667 250.986667-138.602667 0-250.986667-112.384-250.986667-250.986667 0-138.602667 112.384-250.986667 250.986667-250.986666z m0 64a186.986667 186.986667 0 1 0 0 373.973333 186.986667 186.986667 0 0 0 0-373.973333z m423.957333 153.642666v64h-124.330666a304.725333 304.725333 0 0 0-0.277334-64h124.608z m-723.306666 0a304.490667 304.490667 0 0 0-0.277334 64H85.333333v-64h127.317334zM232.533333 187.264l90.346667 90.304c-16.64 13.44-31.829333 28.629333-45.290667 45.290667L187.306667 232.533333l45.226666-45.248z m556.224 0l45.248 45.226667-88.810666 88.874666a302.997333 302.997333 0 0 0-45.546667-44.970666l89.109333-89.130667zM542.656 85.333333v127.04a304.725333 304.725333 0 0 0-64 0.277334V85.333333h64z'></path></svg></span></span></button></div><div class='ant-list ant-list-split style'><div class='ant-spin-nested-loading'><div class='ant-spin-container'><ul class='ant-list-items'><li class='ant-list-item font'><label>默认字体<span role='img' aria-label='question-circle' class='anticon anticon-question-circle' style='margin-left: 3px;'><svg viewBox='64 64 896 896' focusable='false' data-icon='question-circle' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z'></path><path d='M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z'></path></svg></span></label><div class='ant-select ant-select-sm ant-select-single ant-select-show-arrow' style='width: 160px;'><div class='ant-select-selector'><span class='ant-select-selection-search'><input type='search' autocomplete='off' class='ant-select-selection-search-input' role='combobox' aria-haspopup='listbox' aria-owns='rc_select_0_list' aria-autocomplete='list' aria-controls='rc_select_0_list' aria-activedescendant='rc_select_0_list_0' readonly='' unselectable='on' value='' style='opacity: 0;' id='rc_select_0'></span><span class='ant-select-selection-item' title='系统默认'>系统默认</span></div><span class='ant-select-arrow' unselectable='on' aria-hidden='true' style='user-select: none;'><span role='img' aria-label='down' class='anticon anticon-down ant-select-suffix'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div></li><li class='ant-list-item cnfont font'><label>中文字体</label><div class='ant-select ant-select-sm ant-select-single ant-select-show-arrow' style='width: 160px;'><div class='ant-select-selector'><span class='ant-select-selection-search'><input type='search' autocomplete='off' class='ant-select-selection-search-input' role='combobox' aria-haspopup='listbox' aria-owns='rc_select_1_list' aria-autocomplete='list' aria-controls='rc_select_1_list' aria-activedescendant='rc_select_1_list_0' readonly='' unselectable='on' value='' style='opacity: 0;' id='rc_select_1'></span><span class='ant-select-selection-item' title='系统默认'>系统默认</span></div><span class='ant-select-arrow' unselectable='on' aria-hidden='true' style='user-select: none;'><span role='img' aria-label='down' class='anticon anticon-down ant-select-suffix'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div></li><li class='ant-list-item size slider'><div class='slider-inner label'><label>字体大小</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 10.5263%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='12' aria-valuemax='50' aria-valuenow='16' aria-disabled='false' style='left: 10.5263%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-down'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='50' aria-valuenow='16' step='1' class='ant-input-number-input' value='16'></div></div><div class='inputnumber-unit' style='opacity: 1;'>px</div></div></div></li><li class='ant-list-item width slider'><div class='slider-inner label'><label>页面宽度</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 20.5789%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='600' aria-valuemax='2500' aria-valuenow='991' aria-disabled='false' style='left: 20.5789%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-down'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='2500' aria-valuenow='991' step='1' class='ant-input-number-input' value='991'></div></div><div class='inputnumber-unit' style='opacity: 1;'>px</div></div></div></li><li class='ant-list-item space slider'><div class='slider-inner label'><label>字体间距</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 0%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='0' aria-valuemax='10' aria-valuenow='0' aria-disabled='false' style='left: 0%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='true' class='ant-input-number-handler ant-input-number-handler-down ant-input-number-handler-down-disabled'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='10' aria-valuenow='0' step='1' class='ant-input-number-input' value='0'></div></div><div class='inputnumber-unit' style='opacity: 1;'>px</div></div></div></li><li class='ant-list-item lineheight slider'><div class='slider-inner label'><label>字体行高</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 40%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='1' aria-valuemax='3' aria-valuenow='1.8' aria-disabled='false' style='left: 40%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-down'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='3' aria-valuenow='1.8' step='0.1' class='ant-input-number-input' value='1.8'></div></div></div></div></li><li class='ant-list-item weight slider'><div class='slider-inner label'><label>字体粗细</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 37.5%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='100' aria-valuemax='900' aria-valuenow='400' aria-disabled='false' style='left: 37.5%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-down'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='900' aria-valuenow='400' step='100' class='ant-input-number-input' value='400'></div></div></div></div></li><li class='ant-list-item blockspace slider'><div class='slider-inner label'><label>段落间距</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 64%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='0' aria-valuemax='50' aria-valuenow='32' aria-disabled='false' style='left: 64%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-down'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='50' aria-valuenow='32' step='2' class='ant-input-number-input' value='32'></div></div><div class='inputnumber-unit' style='opacity: 1;'>px</div></div></div></li><li class='ant-list-item indent slider'><div class='slider-inner label'><label>首行缩进</label><div class='ant-slider ant-slider-horizontal'><div class='ant-slider-rail'></div><div class='ant-slider-track' style='left: 0%; width: 0%;'></div><div class='ant-slider-step'></div><div class='ant-slider-handle' tabindex='0' role='slider' aria-valuemin='0' aria-valuemax='10' aria-valuenow='0' aria-disabled='false' style='left: 0%; transform: translateX(-50%);'></div></div><div class='inputnumber'><div class='ant-input-number ant-input-number-sm'><div class='ant-input-number-handler-wrap'><span unselectable='on' role='button' aria-label='Increase Value' aria-disabled='false' class='ant-input-number-handler ant-input-number-handler-up'><span role='img' aria-label='up' class='anticon anticon-up ant-input-number-handler-up-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='up' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z'></path></svg></span></span><span unselectable='on' role='button' aria-label='Decrease Value' aria-disabled='true' class='ant-input-number-handler ant-input-number-handler-down ant-input-number-handler-down-disabled'><span role='img' aria-label='down' class='anticon anticon-down ant-input-number-handler-down-inner'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div><div class='ant-input-number-input-wrap'><input autocomplete='off' role='spinbutton' aria-valuemin='0' aria-valuemax='10' aria-valuenow='0' step='1' class='ant-input-number-input' value='0'></div></div><div class='inputnumber-unit' style='opacity: 1;'>em</div></div></div></li><li class='ant-list-item titlealign align'><label>标题对齐</label><div class='ant-select ant-select-sm ant-select-single ant-select-show-arrow' style='width: 160px;'><div class='ant-select-selector'><span class='ant-select-selection-search'><input type='search' autocomplete='off' class='ant-select-selection-search-input' role='combobox' aria-haspopup='listbox' aria-owns='rc_select_2_list' aria-autocomplete='list' aria-controls='rc_select_2_list' aria-activedescendant='rc_select_2_list_0' readonly='' unselectable='on' value='' style='opacity: 0;' id='rc_select_2'></span><span class='ant-select-selection-item' title='系统默认'>系统默认</span></div><span class='ant-select-arrow' unselectable='on' aria-hidden='true' style='user-select: none;'><span role='img' aria-label='down' class='anticon anticon-down ant-select-suffix'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div></li><li class='ant-list-item align'><label>内容对齐</label><div class='ant-select ant-select-sm ant-select-single ant-select-show-arrow' style='width: 160px;'><div class='ant-select-selector'><span class='ant-select-selection-search'><input type='search' autocomplete='off' class='ant-select-selection-search-input' role='combobox' aria-haspopup='listbox' aria-owns='rc_select_3_list' aria-autocomplete='list' aria-controls='rc_select_3_list' aria-activedescendant='rc_select_3_list_0' readonly='' unselectable='on' value='' style='opacity: 0;' id='rc_select_3'></span><span class='ant-select-selection-item' title='系统默认'>系统默认</span></div><span class='ant-select-arrow' unselectable='on' aria-hidden='true' style='user-select: none;'><span role='img' aria-label='down' class='anticon anticon-down ant-select-suffix'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div></li><li class='ant-list-item imagealign align'><label>图片对齐</label><div class='ant-select ant-select-sm ant-select-single ant-select-show-arrow' style='width: 160px;'><div class='ant-select-selector'><span class='ant-select-selection-search'><input type='search' autocomplete='off' class='ant-select-selection-search-input' role='combobox' aria-haspopup='listbox' aria-owns='rc_select_4_list' aria-autocomplete='list' aria-controls='rc_select_4_list' aria-activedescendant='rc_select_4_list_0' readonly='' unselectable='on' value='' style='opacity: 0;' id='rc_select_4'></span><span class='ant-select-selection-item' title='系统默认'>系统默认</span></div><span class='ant-select-arrow' unselectable='on' aria-hidden='true' style='user-select: none;'><span role='img' aria-label='down' class='anticon anticon-down ant-select-suffix'><svg viewBox='64 64 896 896' focusable='false' data-icon='down' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z'></path></svg></span></span></div></li><li class='ant-list-item imagehide switch'><label>隐藏图片</label><button type='button' role='switch' aria-checked='false' class='ant-switch ant-switch-small'><div class='ant-switch-handle'></div><span class='ant-switch-inner'></span></button></li></ul></div></div></div><button type='button' class='ant-btn ant-btn-default ant-btn-block ant-btn-dangerous reset-btn'><span>重 置</span></button></div></div></div></div></div></div></div></div></div><div tabindex='0' aria-hidden='true' data-sentinel='end' style='width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;'></div></div>";
-
-          container.appendChild(drawer);
-
-          // body替换
-
-          console.log("================================");
-
-          $("body").html(root);
-
-          var close_button = document.getElementsByClassName(
-            "ant-drawer-close"
-          )[0];
-          console.log(close_button);
-          close_button.onclick = function() {
-            var drawer_open = document.getElementsByClassName(
-              "ant-drawer-content-wrapper"
-            )[0];
-            drawer_open.setAttribute(
-              "class",
-              "ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
-            );
-          };
-          sendResponse(window.momoyu.coverStatus);
+          // 阅读模式界面显示
+          document.getElementById("joinContentApp").firstChild.className =
+            "root _paper paper zh-cn";
+          // 防止直接操作原网页
+          var documentClone = document.cloneNode(true);
+          var article = new Readability(documentClone).parse();
+          document.getElementsByTagName("article")[0].innerHTML =
+            article.content;
         } else {
-          readOn = true;
-          // $("body").html(oringeDoc);
+          // document.body.className = "";
+          // document.getElementById("joinContentApp").firstChild.className =
+          //   "root _paper paper zh-cn circle-hidden";
           window.location.replace(oringeDoc);
           sendResponse(window.momoyu.coverStatus);
         }
@@ -164,11 +1464,51 @@ export default {
         sendResponse(readOn);
       }
     });
+  },
+  methods: {
+    close() {
+      // this.readOn = false;
+      // document.body.className = "";
+      // document.getElementById("joinContentApp").firstChild.className =
+      //   "root _paper paper zh-cn circle-hidden";
+      window.location.replace(document.URL);
+    },
+    setting() {
+      var drawer_open = document.getElementsByClassName(
+        "ant-drawer-content-wrapper"
+      )[0];
+      drawer_open.setAttribute("class", "ant-drawer-content-wrapper");
+    },
+    closeSetting() {
+      var drawer_open = document.getElementsByClassName(
+        "ant-drawer-content-wrapper"
+      )[0];
+      drawer_open.setAttribute(
+        "class",
+        "ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
+      );
+    },
+    pageWidth(e) {
+      const { value } = e.target;
+      document.getElementsByClassName("root")[0].style.setProperty('--width', value + "px");
+      document.getElementsByClassName("toolbar")[0].style.setProperty('left', String(parseInt(value) + 100) + "px");
+      
+      console.log(document.getElementsByClassName("toolbar")[0].style.getProperty);
+    }
   }
 };
 </script>
 
 <style lang="less">
+.circle-hidden {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: fixed !important;
+  top: 0px !important;
+  left: 0px !important;
+}
 .content_page {
   color: red;
   position: fixed;
@@ -313,6 +1653,23 @@ export default {
   --groupspace: 10px;
 }
 
+.paper {
+  display: block;
+  --size: 23px;
+  --width: 800px;
+  --color: #1b1b1b;
+  --link: #416ed2;
+  --hover: #305ab7;
+  --visited: #305ab7;
+  --select: #1b1b1b;
+  --selectbg: #bbd6fc;
+  --bg-r: 237;
+  --bg-g: 237;
+  --bg-b: 237;
+  --canvas: #ffffff;
+  --bg: rgb(237, 237, 237);
+}
+
 .root .container {
   color: var(--color);
   text-shadow: none;
@@ -415,7 +1772,7 @@ export default {
   display: block;
   cursor: pointer;
   color: var(--color);
-  /* opacity: 0.4; */
+  opacity: 0.4;
   margin-bottom: var(--itemspace);
 }
 .toolbar .anticon.active,
@@ -432,360 +1789,6 @@ export default {
   padding-left: 0;
   padding-right: 20px;
 }
-
-/*!*******************************************************************************************************************************************************!*  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/component/wrapper/index.less ***!
-  *******************************************************************************************************************************************************/
-/* :focus {
-    outline: none;
-}
-.root {
-    --color: #1b1b1b;
-    --link: #416ed2;
-    --bg-r: 237;
-    --bg-g: 237;
-    --bg-b: 237;
-    --bg: #ededed;
-    --canvas: #ffffff;
-    --track-width: 8px;
-    --track: #e2e2e2;
-    --thumb: #9e9e9e;
-    --radius: 4px;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    line-height: 1.795;
-    font-weight: 400;
-    font-variant: tabular-nums;
-    font-feature-settings: "tnum";
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-.ant-input,
-.ant-input-number,
-.ant-modal-header,
-.ant-picker,
-.ant-tag,
-.ant-input-affix-wrapper,
-.ant-select-dropdown,
-.ant-input-number-handler-wrap,
-.ant-pagination-simple .ant-pagination-simple-pager input,
-.ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    color: var(--color);
-    background-color: var(--canvas);
-    border-color: var(--bg);
-}
-.ant-btn-default,
-.ant-popover-inner,
-.ant-popover-arrow-content,
-.ant-btn-dangerous,
-.ant-dropdown-menu,
-.ant-picker-panel-container,
-.ant-drawer-header,
-.ant-drawer-content,
-.ant-input-affix-wrapper-status-error:not(
-        .ant-input-affix-wrapper-disabled
-    ):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper {
-    background-color: var(--canvas);
-}
-.ant-popover-arrow-content::before {
-    background: linear-gradient(to left, var(--canvas) 50%, var(--canvas) 50%)
-        no-repeat -10px -10px;
-}
-.ant-btn-default,
-.ant-checkbox-wrapper,
-.ant-popover-inner-content,
-.ant-radio-button-wrapper,
-.ant-radio-group,
-.ant-drawer-title,
-.ant-tabs,
-.anticon,
-.ant-list,
-.ant-typography,
-h3.ant-typography,
-.ant-select-item,
-.ant-card-meta-title,
-.ant-card-meta-description,
-.ant-divider-inner-text,
-.ant-list-item-meta-title {
-    color: var(--color);
-}
-.ant-btn[disabled],
-.ant-list-item-meta-description,
-.ant-comment-content-author-time > span,
-.ant-input::placeholder {
-    color: var(--color);
-    opacity: 0.4;
-}
-.ant-list-item-meta-description {
-    opacity: 0.6;
-}
-.ant-btn-default:hover,
-.ant-btn-default:focus,
-.ant-dropdown-menu-item:hover,
-.ant-dropdown-menu-submenu-title:hover,
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-    color: var(--link);
-    border-color: var(--link);
-    background: transparent;
-}
-.ant-btn-dangerous {
-    color: #ff4d4f;
-    border-color: #ff7875 !important;
-}
-.ant-btn-dangerous:hover,
-.ant-btn-dangerous:focus {
-    background: transparent;
-    color: #ff7875;
-    border-color: #ff7875;
-}
-.ant-btn-primary,
-.tag-plus,
-.ant-ribbon,
-.ant-select-item-option-selected:not(.ant-select-item-option-disabled),
-.ant-select-item-option-active:not(.ant-select-item-option-disabled),
-.ant-tag-checkable.ant-tag-checkable-checked,
-.ant-picker-time-panel-column
-    > li.ant-picker-time-panel-cell-selected
-    .ant-picker-time-panel-cell-inner {
-    color: var(--canvas);
-    border-color: var(--link);
-    background-color: var(--link);
-}
-.ant-btn-primary svg {
-    fill: var(--canvas);
-}
-.ant-btn-primary[disabled] svg {
-    fill: var(--color);
-}
-.ant-btn-primary:hover,
-.ant-btn-primary:focus {
-    background: transparent;
-}
-.ant-slider-track,
-.ant-slider:hover .ant-slider-track,
-.ant-checkbox-indeterminate .ant-checkbox-inner::after {
-    background-color: var(--link);
-}
-.ant-slider-handle,
-.ant-input-number:hover,
-.ant-slider-handle:focus,
-.ant-checkbox-checked::after,
-.ant-input:focus,
-.ant-input-focused,
-.ant-checkbox:hover .ant-checkbox-inner,
-.ant-checkbox-wrapper:hover .ant-checkbox-inner,
-.ant-checkbox-input:focus + .ant-checkbox-inner,
-.ant-pagination-simple .ant-pagination-simple-pager input:hover,
-.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open),
-.ant-select:not(.ant-select-disabled):hover .ant-select-selector,
-.ant-input-affix-wrapper:focus,
-.ant-input-affix-wrapper-focused,
-.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover,
-.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before,
-.ant-select-focused:not(.ant-select-disabled).ant-select:not(
-        .ant-select-customize-input
-    )
-    .ant-select-selector {
-    border-color: var(--link);
-}
-.ant-card-bordered,
-.ant-drawer-header,
-.ant-tag-checkable,
-.ant-card-head,
-.ant-btn-default,
-.ant-modal-footer,
-.ant-list-split .ant-list-item,
-.ant-tabs-top > .ant-tabs-nav::before {
-    border-color: rgba(var(--bg-r), var(--bg-g), var(--bg-b), 0.6);
-}
-a.ant-btn-disabled {
-    border-color: rgb(var(--bg-r), var(--bg-g), var(--bg-b));
-}
-.ant-btn[disabled] {
-    border-color: var(--color);
-}
-.ant-card {
-    border-radius: 4px;
-}
-.ant-card .ant-btn-default {
-    background-color: var(--bg);
-}
-.ant-card .ant-btn-default.ant-btn-block {
-    background-color: var(--canvas);
-}
-.ant-radio-button-wrapper,
-.ant-modal-content {
-    border-color: var(--bg);
-    background-color: var(--canvas);
-}
-.ant-checkbox-checked .ant-checkbox-inner,
-.ant-btn-primary:hover,
-.ant-btn-primary:focus,
-.ant-picker-cell-in-view.ant-picker-cell-in-range::before,
-.ant-picker-cell-in-view.ant-picker-cell-range-start:not(
-        .ant-picker-cell-range-start-single
-    )::before,
-.ant-picker-cell-in-view.ant-picker-cell-range-end:not(
-        .ant-picker-cell-range-end-single
-    )::before,
-.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
-.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
-.ant-radio-button-wrapper-checked:not(
-        .ant-radio-button-wrapper-disabled
-    ):hover {
-    border-color: var(--link);
-    background-color: var(--link);
-}
-.ant-switch-checked,
-.ant-tabs-ink-bar,
-.ant-radio-button-wrapper-checked:not(
-        .ant-radio-button-wrapper-disabled
-    )::before,
-.ant-radio-button-wrapper-checked:not(
-        .ant-radio-button-wrapper-disabled
-    ):hover::before {
-    background-color: var(--link);
-}
-a,
-.ant-tabs-tab:hover,
-.ant-btn-link,
-.ant-tag-checkable:not(.ant-tag-checkable-checked):hover,
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
-.ant-radio-button-wrapper:hover {
-    color: var(--link);
-}
-.ant-table-tbody > tr.ant-table-placeholder:hover > td {
-    background: var(--canvas);
-}
-.ant-radio-button-wrapper:first-child {
-    border-left-color: var(--bg);
-}
-.ant-radio-button-wrapper-checked:not(
-        [class*=" ant-radio-button-wrapper-disabled"]
-    ).ant-radio-button-wrapper:first-child {
-    border-right-color: var(--bg);
-}
-.ant-table-empty .ant-table-tbody > tr.ant-table-placeholder,
-.ant-popover-message-title,
-.ant-drawer-close {
-    color: var(--color);
-}
-.ant-switch-checked .anticon,
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover,
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)
-    .anticon,
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover
-    .anticon {
-    color: var(--bg);
-}
-.ant-ribbon-text,
-.ant-btn-primary.ant-btn-icon-only > .anticon {
-    color: var(--canvas);
-}
-.ant-table-wrapper {
-    color: inherit;
-}
-.ant-table-wrapper .ant-table {
-    background: transparent;
-}
-.ant-table-wrapper .ant-table .ant-table-thead > tr > th,
-.ant-table-wrapper .ant-table .ant-table-tbody > tr > td {
-    color: var(--color);
-    background: transparent;
-    border-bottom-color: var(--canvas);
-}
-.ant-table-wrapper .ant-table-empty .ant-table-tbody > tr > td {
-    border-bottom-style: none;
-}
-.ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > td,
-.ant-table-wrapper .ant-table-tbody > tr > td.ant-table-cell-row-hover {
-    background: var(--canvas);
-} */
-
-/*!****************************************************************************************************************************************************!*  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/widget/toolbar/index.less ***!
-    ****************************************************************************************************************************************************/
-/* .root {
-    --size: 20px;
-    --weight: 400;
-    --color: #1b1b1b;
-    --itemspace: 10px;
-    --groupspace: 10px;
-}
-.toolbar {
-    color: var(--color);
-    font-weight: var(--weight);
-    font-size: calc(var(--size) + 4px);
-    position: fixed;
-    top: 26px;
-    right: 26px;
-    z-index: 10;
-    overflow: auto;
-    transition: all 300ms;
-}
-.toolbar .items {
-    margin-bottom: var(--groupspace);
-}
-.toolbar .anticon {
-    display: block;
-    cursor: pointer;
-    color: var(--color);
-    opacity: 0.4;
-    margin-bottom: var(--itemspace);
-}
-.toolbar .anticon.active,
-.toolbar .anticon:hover {
-    opacity: 1;
-}
-.toolbar .anticon:focus {
-    outline: 0;
-}
-.toolbar::-webkit-scrollbar {
-    width: 0;
-}
-.toolbar.sticky {
-    padding-left: 0;
-    padding-right: 20px;
-}
-.mobile .toolbar {
-    top: auto;
-    right: 18px;
-    bottom: 50px;
-    font-size: calc(var(--size) - 4px);
-}
-.mobile .toolbar .items {
-    margin-bottom: 0;
-}
-.mobile .toolbar .items-moible {
-    position: fixed;
-    bottom: 6px;
-    margin-top: 0;
-}
-.mobile .toolbar .items-moible .anticon {
-    margin-top: 0;
-}
-.mobile .toolbar .anticon {
-    display: none;
-    opacity: 0.8;
-    margin-bottom: 0;
-    margin-top: var(--itemspace);
-    padding: 10px;
-    border-radius: 50%;
-    background-color: var(--color);
-}
-.mobile .toolbar .anticon svg {
-    fill: var(--canvas);
-}
-.mobile .toolbar .anticon.exit,
-.mobile .toolbar .anticon.mobile {
-    display: block;
-}
-.mobile.collapse .toolbar .anticon {
-    display: block;
-}
-.mobile.collapse .toolbar .items {
-    margin-top: var(--groupspace);
-} */
 /*!**************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/antd/es/style/default.less ***!
   \**************************************************************************************************************************************************************/
@@ -6034,7 +7037,14 @@ a.ant-btn-sm {
   color: rgba(0, 0, 0, 0.45);
   transition: color 0.3s;
 }
+.anticon-close {
+  color: rgba(0, 0, 0, 0.45);
+  transition: color 0.3s;
+}
 .ant-alert-close-icon .anticon-close:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+.anticon-close:hover {
   color: rgba(0, 0, 0, 0.75);
 }
 .ant-alert-close-text {
@@ -21525,5 +22535,191 @@ span.ant-radio + * {
 .ant-drawer-rtl .ant-drawer-close {
   margin-right: 0;
   margin-left: 12px;
+}
+.search {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 160px;
+  border-radius: 11px;
+  transition: width 0.2s;
+}
+.search.ant-input-affix-wrapper-focused {
+  width: 93%;
+}
+.mobile .search.ant-input-affix-wrapper-focused {
+  width: 91%;
+}
+
+.overlay-confirm {
+  min-width: 186px;
+}
+
+.alert {
+  font-size: 12px;
+  margin: 12px 20px 0;
+  align-items: flex-start;
+}
+
+.ant-btn.ant-btn-block.reset-btn {
+  margin: 20px;
+  width: 88%;
+}
+
+.night {
+  border-bottom: 1px solid rgba(var(--bg-r), var(--bg-g), var(--bg-b), 0.6);
+}
+.night .ant-space .ant-switch {
+  position: relative;
+  top: -1px;
+  left: 0;
+}
+
+.card-overlay {
+  max-width: 420px;
+}
+.card-overlay .ant-tooltip-inner {
+  background: transparent;
+  padding: 0;
+}
+.card-overlay .ant-tooltip-arrow {
+  display: none;
+}
+.card-overlay img {
+  width: 330px;
+}
+
+.color-list {
+  width: 100%;
+  list-style: none;
+  padding: 0 3px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+.color-list li {
+  cursor: pointer;
+  border-radius: 3px;
+  width: 40px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.color-list li.active,
+.color-list li:hover {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+.color-list li:focus {
+  outline-offset: 2px;
+  outline: 2px solid var(--link) !important;
+}
+.color-list li.custom {
+  border: 1px solid #f0eded;
+  background-color: #fff;
+}
+.color-list li.custom.active,
+.color-list li.custom:hover {
+  outline-color: #f0eded;
+}
+.align .anticon {
+  margin-top: 4px;
+}
+
+.inputnumber {
+  width: 68px;
+  position: relative;
+  display: inline-block;
+}
+.inputnumber .ant-input-number {
+  width: 100%;
+}
+.inputnumber-unit {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  pointer-events: none;
+  color: var(--color);
+  background-color: var(--canvas);
+  width: 26px;
+  height: 22px;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  border-left: 1px solid var(--bg);
+  translate: opacity 0.2s;
+}
+
+.slider-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.slider-inner .ant-slider {
+  width: 64%;
+}
+.slider-inner .inputnumber {
+  width: 30%;
+}
+.slider-inner.label {
+  position: relative;
+  padding-top: 10px;
+}
+.slider-inner.label label {
+  position: absolute;
+  left: 0;
+  top: -5px;
+  color: var(--color);
+}
+.colorpicker {
+  height: 20px;
+  width: 24px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: 0;
+  background: rgba(var(--bg-r), var(--bg-g), var(--bg-b), 0.3);
+}
+.colorpicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.colorpicker::-webkit-color-swatch {
+  border: none;
+}
+.icon-switch-wrapper {
+  position: relative;
+  line-height: 0;
+}
+.icon-switch-wrapper .icon-switch-children {
+  position: absolute;
+  left: -36px;
+  top: -2px;
+}
+.icon-switch-wrapper .colorpicker {
+  opacity: 0;
+}
+.icon-switch-wrapper .anticon {
+  position: absolute;
+  left: -45px;
+  top: -2px;
+}
+.icon-switch-wrapper .item-icon {
+  left: 3px;
+  top: 1px;
+  font-size: 18px;
+  z-index: 0;
+  pointer-events: none;
+}
+.icon-switch-wrapper .close-icon {
+  position: absolute;
+  left: -5px;
+  top: -7px;
+  z-index: 100;
+  display: none;
+}
+.icon-switch-wrapper .close-icon:hover {
+  opacity: 0.8;
+}
+.icon-switch-wrapper:hover .close-icon {
+  display: block;
 }
 </style>

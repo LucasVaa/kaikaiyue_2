@@ -7,7 +7,7 @@ injectJsInsert();
 function joinContent(element) {
   const div = document.createElement("div");
   div.id = "joinContentApp";
-  document.body.appendChild(div);
+  document.documentElement.insertBefore(div, document.body);
   console.log(div);
   createApp(element).mount("#joinContentApp");
 }
