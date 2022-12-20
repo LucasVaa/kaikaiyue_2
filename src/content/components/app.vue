@@ -5,7 +5,7 @@
   >
     <div class="container">
       <article
-        class="syl-article-base tt-article-content syl-page-article syl-device-pc page"
+        class="syl-article-base tt-article-content page"
       ></article>
     </div>
     <div class="toolbar" style="top: 81px; left: 900px; max-height: 222px;">

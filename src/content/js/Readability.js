@@ -1517,11 +1517,9 @@ Readability.prototype = {
                 // move all the children over. Just assign IDs and class names here. No need to append
                 // because that already happened anyway.
                 topCandidate.id = "readability-page-1";
-                topCandidate.className = "page";
             } else {
                 var div = doc.createElement("DIV");
                 div.id = "readability-page-1";
-                div.className = "page";
 
                 var h1 = doc.createElement("H1");
                 h1.id = "readability-title-1";
